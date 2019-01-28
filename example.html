@@ -1,0 +1,51 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Camera Test</title>
+    <style>
+    .camera {
+      width: 100;
+      text-align: center;
+    }
+    </style>
+  </head>
+
+  <body>
+    <div id="camera" class="camera"></div>
+    <button id="initialize">Initialize</button>
+    <button id="capture">Capture</button>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.4/es6-sham.min.js' async="async" type="application/javascript"></script>
+    <script src='./camera.js' type="application/javascript"></script>
+    <script type="application/javascript">
+      let cameraLib = new Camera(document.getElementById("camera"))
+      /*
+        // Container default settings - optional
+        let containerHeight    = 400
+        let containerWidth     = 600
+        // camera default settings - optional
+        let cameraProps        = {
+          resolution: {
+           facingMode: 'front', // facingMode: 'rear'
+           height: 768,
+           width: 1024
+          }
+        }
+        let containerClassname = 'my-custom-class-name'
+        let cameraLib = new Camera(document.getElementById("camera"), containerHeight, containerWidth, containerClassname, cameraProps)
+      */
+      document.getElementById("initialize").onclick = function(e){
+        cameraLib.renderStream()
+        // cameraLib.renderStream(facingMode) where facingMode is either front/rear
+      }
+      // render first then capture
+      document.getElementById("capture").onclick =  function(e){
+        // Returns base64 of image also renders the image
+        let imageBase64 = cameraLib.takeSnapshot()
+        console.log(imageBase64)
+      }
+    </script>
+  </body>
+</html>
