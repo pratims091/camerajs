@@ -1,10 +1,10 @@
 /*
  * A javascript SDK for capturing image from device's camera(works on all the browser and mobile devices)
- * Author: Pratim Sarang<https://github.com/pratims091>
+ * Author: Pratim Sarangi<https://github.com/pratims091>
  * Version: vanilla
 */
 
-class Camera {
+exprt default class Camera {
   constructor(element, elementHeight=400, elementWidth=600, elementClassName='', cameraProps={}) {
     this.element = element
     this.elementHeight = elementHeight
