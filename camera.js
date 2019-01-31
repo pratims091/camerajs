@@ -5,7 +5,7 @@
 */
 
 exprt default class Camera {
-  constructor(element, elementHeight=400, elementWidth=600, elementClassName='', cameraProps={}) {
+  constructor(element, elementHeight=240, elementWidth=320, elementClassName='', cameraProps={}) {
     this.element = element
     this.elementHeight = elementHeight
     this.elementWidth = elementWidth
@@ -19,7 +19,7 @@ exprt default class Camera {
     }
   }
 
-  renderStream(cameraFacingMode='user') {
+  renderStream(cameraFacingMode='rear') {
     switch(cameraFacingMode) {
       case 'front':
         this.cameraFacingMode = { exact: "environment" }
