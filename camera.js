@@ -4,7 +4,9 @@
  * Version: vanilla
 */
 
-exprt default class Camera {
+// Use when imposting is required
+// export default class Camera {
+class Camera {
   constructor(element, elementHeight=240, elementWidth=320, elementClassName='', cameraProps={}) {
     this.element = element
     this.elementHeight = elementHeight
